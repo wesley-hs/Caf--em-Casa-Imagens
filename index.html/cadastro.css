@@ -1,0 +1,142 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    --light-bg: #1a1a1a;
+    --text-light: #fff;
+    --text-muted: #aaa;
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    width: 100%;
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 16px;
+}
+
+.main-cadastro {
+    background-image: url(assets/home-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tela-cadastro {
+    background-color: var(--light-bg);
+    color: var(--text-light);
+    margin: auto;
+    margin-top: 70px;
+    position: relative;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: calc(500px - 5%);
+    border: var(--border);
+}
+
+.titulo-cadastro {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+
+.campo-container {
+    margin-bottom: 15px;
+}
+
+.campo-cadastro,
+.campo-cadastro-minuscula {
+    height: 30px;
+    border-radius: 8mm;
+    min-width: 90%;
+    font-weight: bold;
+    padding: 5px;
+    background-color: var(--black);
+    color: var(--text-light);
+    border: var(--border);
+}
+
+.campo-cadastro-minuscula {
+    text-transform: none;
+}
+
+.botao-cadastro {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.botao-criar-conta {
+    padding: 7px;
+    width: 200px;
+    color: var(--text-light);
+    background-color: var(--main-color);
+    border-radius: 8mm;
+    font-size: x-large;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-criar-conta:hover {
+    letter-spacing: 0.1rem;
+    background-color: #b89068;
+}
+
+.botao-inicio {
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    width: 80px;
+    padding: 3px;
+    color: var(--text-light);
+    background-color: var(--black);
+    text-align: center;
+    border-radius: 8px;
+    border: var(--border);
+}
+
+
+.search {
+    display: inline-block;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}

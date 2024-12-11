@@ -1,0 +1,226 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: Arial, sans-serif;
+    padding-top: 120px; /* Ajuste a altura da navbar */
+    margin: 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.header {
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    width: 100%;
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 16px;
+}
+
+#user-name {
+    color: white;
+}
+
+#logo {
+    width: auto;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff; /* Cor dos links da navbar */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.dropdown {
+    float: flex;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #302e2e;
+    min-width: 120px;
+    box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search {
+    display: inline-block;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+
+.container1 h1{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg);
+    color:var(--main-color);
+    font-size: 20px;
+    margin-left: 440px;
+}
+
+.container1 p{
+    color: white;
+    margin-left: 450px;
+    
+}
+
+.sobre {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.sobre h1 {
+    color:var(--main-color);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.comentarios {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios h2 {
+    color:var(--main-color);
+    margin-bottom: 20px;
+}
+
+.comentario {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comentario:last-child {
+    border-bottom: none;
+}
+
+.comentario p {
+    margin: 5px 0;
+}
+
+.comentario .cliente {
+    font-weight: bold;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-container input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+    display: none; /* Inicialmente invisível */
+    position: absolute;
+    top: 0;
+    right: 35px;
+}
+
+.search-container img {
+    cursor: pointer;
+}
+
+/* Exibição do campo de pesquisa quando o ícone for clicado */
+.search-container input[type="text"].active {
+    display: block;
+}

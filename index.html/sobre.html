@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sobre.css">
+</head>
+<body>
+   <header class="header">
+    <section>
+        <a id="logo"><img src="logo cafe-casa.png" alt="logo" class="logo"></a>
+        <nav class="navbar">
+            <a id="link-sac" href="#">Sac</a>
+            <div class="dropdown">
+                <a href="#conta">Conta</a>
+                <div class="dropdown-content">
+                    <a id="link-perfil" href="#">Perfil</a>
+                    <a id="link-sair" href="#">Sair</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="search">
+            <input type="text" id="search" placeholder="Pesquisar">
+        </div>
+        
+        <div class="icons">
+
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png" alt="shopping-cart--v1" />
+        </div>
+
+         <!-- Exibindo o nome do cliente -->
+         <div id="user-name" class="user-name"></div>
+
+    </section>
+   </header>
+
+
+<body>
+<header class="bg-light py-3">
+    <div class="container1">
+        <h1 class="text-center">Café em Casa</h1> <br>
+        <p class="text-center text-muted">O seu café favorito, no conforto de casa.</p> <br>
+    </div>
+</header>
+
+<main>
+    <div class="container2">
+        <!-- Seção Sobre -->
+        <div class="sobre">
+            <h1>Sobre Nós</h1> 
+            <p>
+                O <strong>Café em Casa</strong> nasceu da paixão por café e do desejo de oferecer uma experiência única e 
+                personalizada para os amantes dessa bebida tão especial. Nosso objetivo é levar até você os melhores cafés, 
+                selecionados com carinho, para que possa desfrutar de momentos inesquecíveis no conforto do seu lar.
+            </p>
+            <p>
+                Trabalhamos com produtores locais, valorizando a qualidade e a sustentabilidade em cada etapa do processo. 
+                Além disso, oferecemos uma plataforma prática e moderna, onde você pode explorar diferentes tipos de café 
+                e receber tudo diretamente na sua porta.
+            </p>
+        </div>
+
+        <!-- Seção Comentários de Clientes -->
+        <div class="comentarios">
+            <h2>O que nossos clientes dizem</h2>
+
+            <div class="comentario">
+                <p class="cliente">Maria Clara</p>
+                <p>"O Café em Casa transformou minhas manhãs! O aroma e o sabor são simplesmente incríveis."</p>
+            </div>
+
+            <div class="comentario">
+                <p class="cliente">João Pedro</p>
+                <p>"Adoro a variedade de cafés disponíveis. É ótimo saber que estou apoiando produtores locais."</p>
+            </div>
+
+            <div class="comentario">
+                <p class="cliente">Ana Luiza</p>
+                <p>"A entrega é sempre rápida e o atendimento é impecável. Recomendo muito!"</p>
+            </div>
+
+            <div class="comentario">
+                <p class="cliente">Carlos Eduardo</p>
+                <p>"Nada melhor do que começar o dia com um café de qualidade. Obrigado, Café em Casa!"</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white py-3 mt-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Café em Casa. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    
+    document.getElementById('logo').addEventListener('click',() => window.location.href = 'index.html');
+
+    
+    document.getElementById('link-sac').addEventListener('click', () => window.location.href = 'sac.html');
+
+    
+    document.getElementById('link-perfil').addEventListener('click', () => window.location.href = 'perfil.html');
+
+    
+    document.getElementById('link-sair').addEventListener('click', () => window.location.href = 'cadastro.html');
+
+      
+      const searchInput = document.getElementById("search");
+
+
+searchInput.addEventListener("keydown", function(event) {
+  
+    if (event.key === "Enter") {
+        const searchTerm = this.value.trim().toLowerCase(); 
+
+        
+        if (searchTerm === "cadastro") {
+            window.location.href = "cadastro.html";
+        } 
+        else if (searchTerm === "login") {
+            window.location.href = "login.html";
+        }
+        else if (searchTerm === "rastreio" || searchTerm === "status") {
+            window.location.href = "status.html";
+        }
+        else if (searchTerm === "carrinho") {
+            window.location.href = "carrinho.html";
+        }
+        else if (searchTerm === "sobre" || searchTerm === "comentário") {
+            window.location.href = "sobre.html";
+        }
+        else if (searchTerm === "perfil") {
+            window.location.href = "perfil.html";
+        }
+        else if (searchTerm === "pagamento") {
+            window.location.href = "pagamento.html";
+        }
+        else if (searchTerm === "sac" || "dúvidas") {
+            window.location.href = "sac.html";
+         }
+        else {
+          
+            alert("Termo de pesquisa não encontrado.");
+        }
+    }
+});
+
+</script>
+
+</body>
+
+</html>

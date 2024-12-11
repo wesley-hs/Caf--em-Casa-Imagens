@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.sac.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <title>SAC - Café em Casa</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a id="logo"><img src="logo cafe-casa.png" alt="logo" class="logo"></a>
+            <nav class="navbar">
+            
+                <a id="link-sobre" href="#">Sobre</a>
+                <div class="dropdown">
+                    <a href="#conta">Conta</a>
+                    <div class="dropdown-content">
+                        <a id="link-perfil" href="#">Perfil</a>
+                        <a id="link-sair" href="#">Sair</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="search">
+                <input type="text" id="search" placeholder="Pesquisar">
+            </div>
+            <div class="icons">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png" alt="shopping-cart--v1" />
+            </div>
+    
+             <!-- Exibindo o nome do cliente -->
+             <div id="user-name" class="user-name"></div>
+    
+        </section>
+       </header>
+
+    <section class="sac-container">
+        <h2>Serviço de Atendimento ao Cliente</h2>
+        <p>Se você tiver dúvidas ou precisar de ajuda, preencha o formulário abaixo e nossa equipe entrará em contato o mais rápido possível.</p>
+
+        <div class="form-sac">
+            <form id="form-sac" action="#">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required placeholder="Assunto da sua mensagem">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Div para exibir a mensagem de sucesso -->
+        <div id="success-message" class="success-message">
+            <p>Mensagem enviada com sucesso! A nossa equipe entrará em contato em breve.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Café em Casa. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+
+function displayUserName() {
+    // Recupera o nome do cliente do localStorage
+    const clienteNome = localStorage.getItem('clienteNome');
+
+    // Verifica se o nome do cliente existe no localStorage
+    if (clienteNome) {
+        // Se o nome do cliente foi encontrado, exibe-o na página
+        const userNameElement = document.getElementById('user-name');
+        userNameElement.textContent = `Olá, ${clienteNome}`;
+    }
+
+    // Depuração: Verificando se o nome foi recuperado corretamente
+    console.log('Nome exibido na header:', clienteNome);
+}
+
+// Chama a função quando a página carregar
+window.onload = displayUserName;
+
+// Redireciona para a página sobre
+document.getElementById('link-sobre').addEventListener('click', () => window.location.href = "sobre.html");
+
+// Redireciona para a página de cadastro
+document.getElementById('link-sair').addEventListener('click', () => window.location.href = "cadastro.html");
+
+// Redireciona para a página de perfil
+document.getElementById('link-perfil').addEventListener('click', () => window.location.href = "perfil.html");
+
+// Redireciona para a página inicial cliando na logo
+document.getElementById('logo').addEventListener('click', () => window.location.href = 'index.html');
+
+
+// Acessa o campo de pesquisa pelo ID
+const searchInput = document.getElementById("search");
+
+// Adiciona um listener para o evento de "Enter"
+searchInput.addEventListener("keydown", function(event) {
+    // Verifica se a tecla pressionada é "Enter"
+    if (event.key === "Enter") {
+        const searchTerm = this.value.trim().toLowerCase(); // Captura o termo de pesquisa
+
+        // Redireciona baseado no termo de pesquisa
+        if (searchTerm === "cadastro") {
+            window.location.href = "cadastro.html";
+        } 
+        else if (searchTerm === "login") {
+            window.location.href = "login.html";
+        }
+        else if (searchTerm === "rastreio" || searchTerm === "status") {
+            window.location.href = "status.html";
+        }
+        else if (searchTerm === "carrinho") {
+            window.location.href = "carrinho.html";
+        }
+        else if (searchTerm === "sobre" || searchTerm === "comentário") {
+            window.location.href = "sobre.html";
+        }
+        else if (searchTerm === "perfil") {
+            window.location.href = "perfil.html";
+        }
+        else if (searchTerm === "pagamento") {
+            window.location.href = "pagamento.html";
+        }
+        else if (searchTerm === "sac" || "dúvidas") {
+           window.location.href = "sac.html";
+        }
+        else {
+            // Fallback para um valor não encontrado
+            alert("Termo de pesquisa não encontrado.");
+        }
+    }
+});
+
+// Adiciona o evento de envio ao formulário
+document.getElementById('form-sac').addEventListener('submit', function(e) {
+    e.preventDefault(); // Impede o envio padrão do formulário
+
+    // Valida se os campos não estão vazios (opcional, você pode personalizar)
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const assunto = document.getElementById('assunto').value;
+    const mensagem = document.getElementById('mensagem').value;
+
+    if (nome && email && assunto && mensagem) {
+        // Exibe a mensagem de sucesso
+        document.getElementById('success-message').style.display = 'block';
+        // Opcional: Limpa os campos após o envio
+        document.getElementById('form-sac').reset();
+    } else {
+        // Exibe um alerta caso algum campo esteja vazio
+        alert('Por favor, preencha todos os campos.');
+    }
+});
+
+
+
+    </script>
+
+</body>
+
+</html>

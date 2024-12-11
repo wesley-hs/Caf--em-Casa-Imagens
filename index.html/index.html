@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <title>Café em casa</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a id="logo"><img src="logo cafe-casa.png" alt="logo" class="logo"></a>
+            <nav class="navbar">
+                
+                <a id="link-sobre" href="#">Sobre</a>
+                <div class="dropdown">
+                    <a href="#menu" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#cafe-trad">Café Tradicional</a>
+                        <a href="#cafe-gourmet">Café Gourmet</a>
+                        <a href="#capuccino">Capuccino</a>
+                    
+                    </div>
+                </div>
+                <a id="link-sac" href="#">SAC</a>
+                <a id="link-cadastro" href="#">Cadastre-se</a>
+                <a id="link-login" href="#">Login</a>
+            </nav>
+            <div class="search">
+                <input type="text" id="search" placeholder="Pesquisar">
+            </div>
+            <div class="icons">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png" alt="shopping-cart--v1" />
+            </div>
+
+           
+         <div id="user-name" class="user-name"></div>
+         
+        </section>
+    </header>
+    <div class="overlay" style="display: none;"></div>
+    <div class="carrinho" style="display: none;">
+        <h1>Carrinho</h1>
+        <div class="itens"></div>
+        <div class="total">Total: R$ 0,00</div>
+        <button class="finalizar">Finalizar Compra</button>
+    </div>
+
+    <div class="home-container">
+        <section id="home" class="active">
+            <div class="content">
+                <h3>O melhor café da região</h3>
+                <p>Descubra a magia do nosso café. Feito com grãos selecionados e preparado com paixão para trazer o melhor sabor à sua mesa.</p>
+                <a href="#menu" class="btn" id="buy-now-btn">Compre agora</a>
+            </div>
+        </section>
+ 
+        <section class="about" id="about" style="display: none;">
+            <h2 class="title">Sobre <span>Nós</span></h2>
+            <div class="row">
+                <div class="container-img">
+                    <img src="./assets/about-img.jpg" alt="sobre-nos">
+                </div>
+                <div class="content">
+                    <h3>O que faz nosso café ser especial</h3>
+                    <p>Nosso café é produzido com cuidado desde a escolha dos grãos até o processo de torra artesanal. Trabalhamos com sustentabilidade e valorizamos os pequenos produtores.</p>
+                    <a href="#" class="btn">Saiba mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="promo" id="promo" style="display: none;">
+            <h2 class="title">Promoções</h2>
+            <div class="box-container">
+                <div class="box">
+                    <img src="./assets/menu-4.png" alt="item-4">
+                    <h3>Capuccino</h3>
+                    <div class="price">R$ 23,99 <span>R$ 27,99</span></div>
+                    <a href="#" class="btn add-to-cart" 
+                    data-nome="Capuccino" data-preco="23.99" data-imagem=".\assets\menu-4.png">Adicionar ao carrinho</a>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-1.png" alt="item-1">
+                    <h3>Café tradicional</h3>
+                    <div class="price">R$ 15,99 <span>R$ 19,99</span></div>
+                    <a href="#" class="btn add-to-cart"></a>
+                   data-nome="Café tradicional" data-preco="15.99">Adicionar ao carrinho</a>
+                   
+                </div>
+            </div>
+        </section>
+
+        <section id="cafe-gourmet" class="menu" style="display: none;">
+            <h2 class="title">Cafés Gourmet</h2>
+            <div class="box-container">
+                <div class="box">
+                    <img src="./assets/menu-3.png" alt="item-3">
+                    <h3>Café Gourmet</h3>
+                    <div class="price">R$ 25,99 <span>R$ 29,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Gourmet" data-preco="25.99" data-imagem=".\assets\menu-3.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-5.png" alt="item-5">
+                    <h3>Café Premium</h3>
+                    <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99" data-imagem=".\assets\menu-5.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-5.png" alt="item-5">
+                    <h3>Café Premium</h3>
+                    <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99" data-imagem=".\assets\menu-5.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-5.png" alt="item-5">
+                    <h3>Café Premium</h3>
+                    <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99" data-imagem=".\assets\menu-5.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-6.png" alt="item-6">
+                    <h3>Café Aromatizados</h3>
+                    <div class="price">R$ 34,99 <span>R$ 39,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Aromatizados" data-preco="34.99" data-imagem=".\assets\menu-6.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-6.png" alt="item-6">
+                    <h3>Café Aromatizados</h3>
+                    <div class="price">R$ 34,99 <span>R$ 39,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Aromatizados" data-preco="34.99" data-imagem=".\assets\menu-6.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-6.png" alt="item-6">
+                    <h3>Café Aromatizados</h3>
+                    <div class="price">R$ 34,99 <span>R$ 39,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café Aromatizados" data-preco="34.99" data-imagem=".\assets\menu-6.png">Adicionar ao carrinho</a>
+                    <button id="details-gourmet">Ver detalhes</button>
+                </div>
+            </div>
+            <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+        </section>
+
+        <section id="cafe-trad" class="menu" style="display: none;">
+            <h2 class="title">Cafés Tradicionais</h2>
+            <div class="box-container">
+                <div class="box">
+                    <img src="./assets/menu-1.png" alt="item-1">
+                    <h3>Café tradicional</h3>
+                    <div class="price">R$ 15,99 <span>R$ 19,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café tradicional" data-preco="15.99" data-imagem=".\assets\menu-1.png">Adicionar ao carrinho</a>
+                    <button id="detalhes-cafe-tradicional">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-2.png" alt="item-2">
+                    <h3>Café extra forte</h3>
+                    <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99" data-imagem=".\assets\menu-2.png">Adicionar ao carrinho</a>
+                    <button id="detalhes-cafe-extra-forte">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-2.png" alt="item-2">
+                    <h3>Café extra forte</h3>
+                    <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99" data-imagem=".\assets\menu-2.png">Adicionar ao carrinho</a>
+                    <button id="detlscafe-exforte2">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-2.png" alt="item-2">
+                    <h3>Café extra forte</h3>
+                    <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99" data-imagem=".\assets\menu-2.png">Adicionar ao carrinho</a>
+                    <button id="detls-caf02">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-2.png" alt="item-2">
+                    <h3>Café extra forte</h3>
+                    <div class="price">R$ 16,99 <span>R$ 23,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99" data-imagem=".\assets\menu-2.png">Adicionar ao carrinho</a>
+                    <button id="details-cafeext2">Ver detalhes</button>
+                </div>
+                <div class="box">
+                    <img src="./assets/menu-1.png" alt="item-1">
+                    <h3>Café tradicional</h3>
+                    <div class="price">R$ 17,99 <span>R$ 19,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Café tradicional" data-preco="15.99" data-imagem=".\assets\menu-1.png">Adicionar ao carrinho</a>
+                    <button id="details-tradicional">Ver detalhes</button>
+                </div>
+            </div>
+            <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+        </section>
+
+        <section id="capuccino" class="menu" style="display: none;">
+            <h2 class="title">Capuccino</h2>
+            <div class="box-container">
+                <div class="box">
+                    <img src="./assets/menu-4.png" alt="item-4">
+                    <h3>Capuccino</h3>
+                    <div class="price">R$ 23,99 <span>R$ 27,99</span></div>
+                    <a href="#" class="btn add-to-cart" data-nome="Capuccino" data-preco="23.99" data-imagem="./assets/menu-4.png">Adicionar ao carrinho</a>
+                    <button id="detaisl-capuccino">Ver detalhes</button>
+                </div>
+            </div>
+            <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+        </section>
+    </div>
+
+    <section class="about" id="about">
+        <h2 class="title">Sobre <span>Nós</span></h2>
+        <div class="row">
+            <div class="container-img">
+                <img src="./assets/about-img.jpg" alt="sobre-nos">
+            </div>
+            <div class="content">
+                <h3>O que faz nosso café ser especial</h3>
+                <p>Nosso café é produzido com cuidado desde a escolha dos grãos até o processo de torra artesanal. Trabalhamos com sustentabilidade e valorizamos os pequenos produtores.</p>
+                <a href="#" class="btn">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Café em casa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let total = 0;
+
+    
+    document.querySelector('.icons img[alt="shopping-cart--v1"]').addEventListener('click', () => {
+        const carrinhoDiv = document.querySelector('.carrinho');
+        carrinhoDiv.style.display = carrinhoDiv.style.display === 'none' ? 'block' : 'none';
+        atualizarCarrinho();
+
+        document.querySelector('.icons img[alt="shopping-cart--v1"]').addEventListener('click', toggleCarrinho);
+
+
+overlay.addEventListener('click', toggleCarrinho);
+    });
+
+  
+function adicionarAoCarrinho(nome, preco, imagem) {
+    const itemExistente = carrinho.find(item => item.nome === nome);
+    if (itemExistente) {
+        itemExistente.quantidade++;
+    } else {
+       
+        carrinho.push({ nome, preco: parseFloat(preco), quantidade: 1, imagem});
+    }
+    total += parseFloat(preco);
+    salvarCarrinho(); 
+    atualizarCarrinho();
+}
+
+function salvarCarrinho() {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+
+function atualizarCarrinho() {
+    const itensDiv = document.querySelector('.carrinho .itens');
+    itensDiv.innerHTML = ''; 
+
+    carrinho.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `
+            <img src="${item.imagem}" alt="${item.nome}" class="box" style="width: 50px; height: auto; margin-right: 10px;">
+            ${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.quantidade} 
+            <button class="remover" data-index="${index}">Remover</button>
+            <input type="number" value="${item.quantidade}" min="1" class="quantidade" data-index="${index}">
+        `;
+        itensDiv.appendChild(div);
+    });
+
+    document.querySelector('.carrinho .total').innerText = `Total: R$ ${total.toFixed(2)}`;
+    adicionarRemoverListeners();
+    adicionarQuantidadeListeners();
+}
+
+
+function adicionarRemoverListeners() {
+    document.querySelectorAll('.remover').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.getAttribute('data-index');
+            total -= carrinho[index].preco * carrinho[index].quantidade; 
+            carrinho.splice(index, 1); 
+            salvarCarrinho(); 
+            atualizarCarrinho();
+        });
+    });
+}
+
+
+function adicionarQuantidadeListeners() {
+    document.querySelectorAll('.quantidade').forEach(input => {
+        input.addEventListener('change', (e) => {
+            const index = e.target.getAttribute('data-index');
+            const novaQuantidade = parseInt(e.target.value);
+            if (novaQuantidade > 0) {
+                const item = carrinho[index];
+                total -= item.preco * item.quantidade; 
+                item.quantidade = novaQuantidade; 
+                total += item.preco * item.quantidade; 
+                salvarCarrinho(); 
+                atualizarCarrinho();
+            } else {
+                alert('A quantidade deve ser pelo menos 1.');
+            }
+        });
+    });
+}
+
+
+document.querySelectorAll('.btn.add-to-cart').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        const nome = button.getAttribute('data-nome');
+        const preco = button.getAttribute('data-preco');
+        const imagem = button.getAttribute('data-imagem'); 
+        adicionarAoCarrinho(nome, preco, imagem);
+    });
+});
+
+
+document.querySelector('.finalizar').addEventListener('click', () => {
+    alert('Compra finalizada!');
+
+    
+    carrinho = []; 
+    total = 0;
+
+    atualizarCarrinho(); // 
+    document.querySelector('.carrinho').style.display = 'none'; 
+
+    
+    setTimeout(() => {
+        window.location.href = 'pagamento.html';
+    }, 3000); 
+});
+
+
+if (carrinho.length > 0) {
+    carrinho.forEach(item => {
+        total += item.preco * item.quantidade;
+    });
+    atualizarCarrinho();
+}
+
+
+    
+});
+
+
+
+     const menuLinks = document.querySelectorAll('.navbar a');
+        menuLinks.forEach(link => {            
+            link.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                   
+                    document.querySelectorAll('.home-container > section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    const targetId = link.getAttribute('href');
+                    document.querySelector(targetId).style.display = 'block';
+                   
+                    document.body.classList.add('black-background');
+                });
+            });
+
+            
+            const backToHomeButtons = document.querySelectorAll('.back-to-home');
+            backToHomeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    document.querySelectorAll('.home-container > section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    document.querySelector('#home').style.display = 'block';
+                   
+                    document.body.classList.remove('black-background');
+                });
+            });
+
+            document.getElementById('detalhes-cafe-tradicional').addEventListener('click', function() {
+            window.location.href = 'caf1.html'; // Redireciona para a página caf1.html
+            });
+
+            document.getElementById('detalhes-cafe-extra-forte').addEventListener('click', function() {
+                window.location.href = 'cafextraforte.html';
+            });
+
+            document.getElementById('details-cafeext2').addEventListener('click', function() {
+                window.location.href = 'cafeext2.html';
+            });
+
+            document.getElementById('detlscafe-exforte2').addEventListener('click', function() {
+                window.location.href = 'cafextraforte2.html';
+            });
+
+            document.getElementById('detls-caf02').addEventListener('click', function() {
+                window.location.href = 'caf02.html';
+            });
+
+           document.getElementById('details-tradicional').addEventListener('click', function() {
+            window.location.href = 'caf1.html';
+           });
+
+           document.getElementById('detaisl-capuccino').addEventListener('click', function() {
+            window.location.href = 'capuccino.html';
+           });
+
+           document.getElementById('details-gourmet').addEventListener('click', function() {
+            window.location.href = 'gourmet1.html';
+           }); 
+
+           document.getElementById('details-gourmet').addEventListener('click', function() {
+            window.location.href = 'gourmet1.html';
+           }); 
+
+            document.getElementById('logo').addEventListener('click', () => window.location.href = 'carrinho.html');
+        
+            document.getElementById('link-sac').addEventListener('click', () => window.location.href = 'sac.html');
+
+            document.getElementById('link-sobre').addEventListener('click', () => window.location.href = "sobre.html");
+
+            document.getElementById('link-cadastro').addEventListener('click', () => window.location.href = 'cadastro.html');
+
+            document.getElementById('link-login').addEventListener('click', () => window.location.href = 'login.html');
+
+
+           function displayUserName() {
+   
+    const clienteNome = localStorage.getItem('clienteNome');
+
+    
+    if (clienteNome) {
+       
+        const userNameElement = document.getElementById('user-name');
+        userNameElement.textContent = `Olá, ${clienteNome}`;
+    }
+
+}
+
+
+window.onload = displayUserName;
+
+
+const searchInput = document.getElementById("search");
+
+
+searchInput.addEventListener("keydown", function(event) {
+   
+    if (event.key === "Enter") {
+        const searchTerm = this.value.trim().toLowerCase(); 
+
+        
+        if (searchTerm === "cadastro") {
+            window.location.href = "cadastro.html";
+        } 
+        else if (searchTerm === "login") {
+            window.location.href = "login.html";
+        }
+        else if (searchTerm === "rastreio" || searchTerm === "status") {
+            window.location.href = "status.html";
+        }
+        else if (searchTerm === "carrinho") {
+            window.location.href = "carrinho.html";
+        }
+        else if (searchTerm === "sobre" || searchTerm === "comentário") {
+            window.location.href = "sobre.html";
+        }
+        else if (searchTerm === "perfil") {
+            window.location.href = "perfil.html";
+        }
+        else if (searchTerm === "pagamento") {
+            window.location.href = "pagamento.html";
+        }
+        else if (searchTerm === "sac" || "dúvidas") {
+           window.location.href = "sac.html";
+        }
+        else {
+       
+            alert("Termo de pesquisa não encontrado.");
+        }
+    }
+});
+
+
+    </script>
+
+</body>
+</html>

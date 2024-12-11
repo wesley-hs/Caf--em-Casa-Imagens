@@ -1,0 +1,555 @@
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+.black-background {
+    background-color: #000; /* Fundo preto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    padding-top: 100px; /* Ajuste conforme necessário */
+}
+
+.header {
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    width: 100%; /* Para garantir que a navbar ocupe toda a largura */
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.carrinho {
+    background-color: var(--black);
+    border-radius: 8px;
+    padding: 2rem;
+    position: fixed; /* Fixa o carrinho na tela */
+    right: 20px; /* Ajuste conforme necessário */
+    top: 70px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Para que fique acima de outros elementos */
+    color: white;
+    display: none; /* Começa escondido */
+    width: 300px; /* Ajuste conforme necessário */
+}
+
+.carrinho h1 {
+    color: var(--main-color);
+    font-size: 2.5rem; /* Ajustado para uma melhor visualização */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.carrinho .itens {
+    margin-bottom: 2rem;
+}
+
+.carrinho .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: var(--border);
+}
+
+
+.carrinho .total {
+    font-size: 1.8rem; /* Ajustado para melhor legibilidade */
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff; /* Cor dos links da navbar */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.dropdown {
+    float: flex;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #302e2e;
+    min-width: 120px;
+    box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.search {
+    display: inline-block;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+}
+
+.logo {
+    width: 130px;
+}
+
+#user-name {
+    color: white;
+    font-size: 16px;
+}
+
+
+
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    border-radius: 8mm;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+#home {
+    padding: 20px;
+}
+
+.home-container {
+    background: url("./assets/home-img.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px; /* Deve ser igual ao padding-top do body */
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 60rem;
+    padding-bottom: 50vh;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 1rem 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.menu .box-container .box img {
+    height: 10rem;
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff;
+}
+
+.menu .box-container .box:hover>* {
+    color: var(--black);
+}
+
+.promo .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.promo .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.promo .box-container .box img {
+    height: 10rem;
+}
+
+.promo .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.promo .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.promo .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.promo .box-container .box:hover {
+    background-color: #fff;
+}
+
+.promo .box-container .box:hover>* {
+    color: var(--black);
+}
+
+footer {
+    background-color: #333; /* Cor de fundo do footer */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px 0; /* Espaçamento interno */
+    position: relative; /* Para garantir que o footer fique no lugar certo */
+    bottom: 0; /* Para que fique sempre na parte inferior da página */
+    width: 100%; /* Para ocupar toda a largura da tela */
+}
+
+/* Estilização do Carrinho */
+.carrinho .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: var(--border);
+}
+
+.carrinho .item img {
+    width: 80px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.descricao {
+    flex: 1;
+}
+
+.descricao h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.descricao p {
+    color: #fff;
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
+
+input[type="number"] {
+    width: 50px;
+    margin-right: 10px;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+button:hover {
+    background-color: #b29a6e; /* Cor de fundo ao passar o mouse */
+}
+
+.total {
+    text-align: right;
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.finalizar {
+    background-color: var(--main-color);
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem; /* Para espaçamento */
+}
+
+.finalizar:hover {
+    background-color: #b29a6e; /* Cor ao passar o mouse */
+}
+
+.product-image {
+    max-width: 100%;
+    border-radius: 8mm;
+
+}
+
+.price {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 6mm;
+}
+
+
+/* Estilização geral da dica de harmonização */
+.tip-container {
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    border-left: 4px solid #6d4c41; /* Linha à esquerda para destacar a dica */
+    padding: 24px 20px; /* Aumento do padding superior e inferior */
+    margin: 24px 0; /* Aumento da margem superior */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: 'Arial', sans-serif; /* Fonte clara e legível */
+}
+
+.tip-container p {
+    font-size: 1.1em; /* Tamanho de texto confortável */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+.tip-container strong {
+    font-weight: bold;
+    color: #6d4c41; /* Cor do texto de destaque */
+}
+
+.tip-container em {
+    font-style: italic;
+    color: #555; /* Cor do texto em itálico */
+}
+
+#detalhes-cafe-tradicional {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#detalhes-cafe-tradicional:hover {
+    letter-spacing: 0.1rem;
+}
+
+#detalhes-cafe-extra-forte {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#detalhes-cafe-extra-forte:hover {
+    letter-spacing: 0.1rem;
+}
+
+#detlscafe-exforte2 {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#detlscafe-exforte2:hover {
+    letter-spacing: 0.1rem;
+}
+
+#caf2.html {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#caf2.html:hover {
+    letter-spacing: 0.1rem;
+}
+
+#details-cafeext2 {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#details-cafeext2:hover {
+    letter-spacing: 0.1rem;
+}
+
+#detls-caf02 {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#detls-caf02 :hover{
+    letter-spacing: 0.1rem;
+}
+
+#details-tradicional {
+    border-radius: 8mm;
+    margin-top: 10px;
+}
+
+#details-tradicional:hover {
+    letter-spacing: 0.1rem;
+}
+
+#detaisl-capuccino {
+    border-radius: 8mm;
+    margin-top: 10px;
+   
+   
+}
+
+#detaisl-capuccino:hover {
+    letter-spacing: 0.1rem;
+}
+
+#details-gourmet {
+    border-radius: 8mm;
+    margin-top: 10px;
+   
+}
+
+#details-gourmet:hover {
+    letter-spacing: 0.1rem;
+}

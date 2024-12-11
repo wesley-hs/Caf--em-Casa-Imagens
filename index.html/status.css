@@ -1,0 +1,225 @@
+body {
+    font-family: "Poppins", sans-serif;
+    padding: 5px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+.status-mensagem {
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 20px; 
+    color: white;
+}
+
+h1 {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 100px;
+    color: white;
+}
+
+.price{
+    color: #fff;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.logo {
+    position: absolute; 
+    top: 3.5rem; 
+    left: 10rem; 
+}
+
+.logo img {
+    height: 30px; 
+    cursor: auto;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center; 
+    gap: 2rem; 
+    width: 100%;
+}
+
+
+.navbar a {
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f1c40f; 
+    border-bottom: 2px solid #f1c40f;
+}
+
+
+.icons {
+    position: absolute; 
+    top: 1.5rem; 
+    right: 1.5rem; 
+    display: flex;
+    gap: 1rem;
+    left: 12rem;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding-right: 250px;
+    margin-left: 130px;
+    gap: 2rem;
+}
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+}
+
+#user-name{ 
+    color: white;
+   padding-left: 600px;
+   margin-top: -40px;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    color: white;
+     flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.status i {
+    font-size: 40px;
+}
+
+.verde {
+    color: white;
+}
+
+.status-bar {
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+}
+
+.status-bar div {
+    height: 100%;
+    background-color: green;
+    width: 0%;
+    border-radius: 5px;
+}
+
+.status p {
+    margin-top: 10px;
+}
+
+.carrinho-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    height: auto; 
+    margin-top: 20px; 
+}
+
+
+.carrinho-item {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    padding: 10px;
+    border: none; 
+    border-radius: 8px; 
+    background-color: white; 
+    color: black;
+    max-width: 700px; 
+    flex: 1 1 auto; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px;
+    margin: 0 auto; 
+}
+
+
+.carrinho-item img {
+    width: 80px; 
+    height: auto; 
+    border-radius: 4px; 
+}
+
+.carrinho-item {
+    margin: 0;
+    font-size: 14px; 
+    color: black; 
+}
+
+
+.carrinho-item p.preco {
+    font-weight: bold;
+    color: black; 
+}
+
+.btn {
+    display: block;
+    width: 40%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    margin: 20px auto; 
+    cursor: pointer;
+    border: none;
+    border-radius: 8mm;
+    font-weight: bold;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+.search {
+    display: inline-block;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}

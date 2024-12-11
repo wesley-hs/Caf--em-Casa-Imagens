@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café em Casa - Cadastro</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="cadastro.css" rel="stylesheet">
+    <script src="script/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <style>
+        form i {
+            margin-left: -30px;
+            cursor: pointer;
+        }
+        .submit-eye {
+            position: relative;
+            top: 2px; 
+            z-index: 10;
+            font-size: large;
+            border: none;
+            background: transparent;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="main-cadastro">
+
+    <header class="header">
+        <section>
+            <a id="logo"><img src="logo cafe-casa.png" alt="logo" class="logo"></a>
+            <nav class="navbar">
+                <a id="link-sobre" href="#">Sobre</a>
+                <div class="dropdown">
+                 <a id="link-perfil" href="#">Perfil</a>
+                       
+                    </div>
+                </div>
+            </nav>
+            <div class="search">
+                <input type="text" id="search" placeholder="Pesquisar">
+            </div>
+            <div class="icons">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png" alt="shopping-cart--v1" />
+            </div>
+        </section>
+    </header>
+    
+    <section class="cadastro" id="cadastro">
+        <form method="POST" onsubmit="salvarCadastroLocalStorage(event)">
+            <div class="tela-cadastro">
+                <div class="titulo-cadastro">Cadastro</div>
+
+                <div class="campo-container">
+                    <input type="text" class="campo-cadastro" placeholder="Nome" required>
+                </div>
+                <div class="campo-container">
+                    <input type="text" class="campo-cadastro CPF" placeholder="CPF" required>
+                </div>
+                <div class="campo-container">
+                    <input type="email" class="campo-cadastro-minuscula" placeholder="E-mail" required>
+                </div>
+                <div class="campo-container">
+                    <input type="text" class="campo-cadastro celular" placeholder="Celular" required>
+                </div>
+                <div class="campo-container">
+                    <input type="password" id="senha" class="campo-cadastro-minuscula input" placeholder="Senha" required>
+                    <i class="bi bi-eye submit-eye" id="togglePassword"></i>
+                </div>
+                <div class="campo-container">
+                    <input type="password" id="confirma_senha" class="campo-cadastro-minuscula" placeholder="Confirmar senha" required>
+                    <i class="bi bi-eye submit-eye" id="togglePasswordConfirm"></i>
+                </div>
+                <div class="botao-cadastro">
+                    <button type="submit" class="botao-criar-conta">Criar conta</button>
+                </div>
+                <div style="margin: auto; width: 50%; text-align: center; padding-top: 20px;">
+                    <p>Já possui uma conta? <a href="login.html">Entre</a></p>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <script src="script/jquery.mask.js"></script>
+    <script>
+
+        // Redireciona para a página inicial clicando na logo
+        document.getElementById('logo').addEventListener('click', () => window.location.href = 'index.html');
+
+        // Redireciona para a página de perfil
+        document.getElementById('link-perfil').addEventListener('click', () => window.location.href = 'perfil.html');
+
+        // Redireciona para a página sobre
+        document.getElementById('link-sobre').addEventListener('click', () => window.location.href = "sobre.html");
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Exibir senha
+            const togglePassword = document.getElementById('togglePassword');
+            const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
+            const senha = document.getElementById('senha');
+            const confirmaSenha = document.getElementById('confirma_senha');
+
+            togglePassword.addEventListener('click', () => {
+                const type = senha.type === 'password' ? 'text' : 'password';
+                senha.type = type;
+                togglePassword.classList.toggle('bi-eye-slash');
+            });
+
+            togglePasswordConfirm.addEventListener('click', () => {
+                const type = confirmaSenha.type === 'password' ? 'text' : 'password';
+                confirmaSenha.type = type;
+                togglePasswordConfirm.classList.toggle('bi-eye-slash');
+            });
+
+            // Máscaras
+            $('.CPF').mask('000.000.000-00');
+            $('.celular').mask('(00) 00000-0000');
+        });
+
+        function salvarCadastroLocalStorage(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirma_senha').value;
+
+            if (senha !== confirmaSenha) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            const nome = document.querySelector('.campo-cadastro[placeholder="Nome"]').value;
+            const cpf = document.querySelector('.campo-cadastro[placeholder="CPF"]').value;
+            const email = document.querySelector('.campo-cadastro-minuscula[placeholder="E-mail"]').value;
+            const celular = document.querySelector('.campo-cadastro[placeholder="Celular"]').value;
+
+            const usuario = {
+                nome: nome,
+                cpf: cpf,
+                email: email,
+                celular: celular,
+                senha: senha // Não é seguro armazenar senhas em texto puro!
+            };
+
+            localStorage.setItem('usuarioCadastro', JSON.stringify(usuario));
+            localStorage.setItem('clienteNome', nome);
+            localStorage.setItem('clienteEmail', email);
+            localStorage.setItem('clienteCelular', celular);
+
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = 'login.html';
+            document.querySelector('form').reset();
+        }
+
+        // Acessa o campo de pesquisa pelo ID
+ const searchInput = document.getElementById("search");
+
+// Adiciona um listener para o evento de "Enter"
+searchInput.addEventListener("keydown", function(event) {
+    // Verifica se a tecla pressionada é "Enter"
+    if (event.key === "Enter") {
+        const searchTerm = this.value.trim().toLowerCase(); // Captura o termo de pesquisa
+
+        // Redireciona baseado no termo de pesquisa
+        if (searchTerm === "cadastro") {
+            window.location.href = "cadastro.html";
+        } 
+        else if (searchTerm === "login") {
+            window.location.href = "login.html";
+        }
+        else if (searchTerm === "rastreio" || searchTerm === "status") {
+            window.location.href = "status.html";
+        }
+        else if (searchTerm === "carrinho") {
+            window.location.href = "carrinho.html";
+        }
+        else if (searchTerm === "sobre" || searchTerm === "comentário") {
+            window.location.href = "sobre.html";
+        }
+        else if (searchTerm === "perfil") {
+            window.location.href = "perfil.html";
+        }
+        else if (searchTerm === "pagamento") {
+            window.location.href = "pagamento.html";
+        }
+        else if (searchTerm === "sac" || "dúvidas") {
+           window.location.href = "sac.html";
+        }
+        else {
+            // Fallback para um valor não encontrado
+            alert("Termo de pesquisa não encontrado.");
+        }
+    }
+});
+
+    </script>
+</body>
+</html>

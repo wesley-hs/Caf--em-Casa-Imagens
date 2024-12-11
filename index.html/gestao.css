@@ -1,0 +1,248 @@
+/* Reset das margens e fontes */
+:root {
+  --main-color: #d3ad7f;
+  --black: #13131a;
+  --bg: #010103;
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  --primary-color: #d49d37;
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear; 
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Estilização geral */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  color: #fcfcfc;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  color: white;
+  border-bottom: var(--border);
+  background-color: var(--bg);
+  text-align: center;
+  padding: 1rem;
+  
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: white;
+ 
+ 
+}
+
+/* Estrutura principal */
+main {
+  margin-top: 7rem; /* Espaço para o cabeçalho */
+  width: 90%; /* Tamanho ajustável */
+  max-width: 1200px;
+  background-color: #000;
+  border-radius: 8px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Filtro de busca */
+#filtro {
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+}
+
+#filtro input, #filtro button {
+  display: block;
+  width: 50%;
+  height: 30px;
+  max-width: 400px;
+  margin: 0.5rem auto;
+  color: white;
+  border-radius: 8px;
+  margin-left: 0;
+  margin-top: 15px;
+  
+  
+}
+
+#filtro button {
+  background-color: var(--main-color);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#filtro button:hover {
+  transform: scale(1.1); /* Dá o "zoom" aumentando o tamanho */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+/* Tabela */
+#tabela {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  color: var(--bg);
+  font-size: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+#tabela h2{
+  color: white;
+}
+
+#tabela table {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+}
+
+#tabela th, #tabela td {
+  padding: 1rem;
+}
+
+#tabela th {
+  background-color: var(--main-color);
+  color: var(--bg);
+  font-weight: bold;
+  transform: scale(1); /* Dá o "zoom" aumentando o tamanho */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+#tabela td {
+  background-color: #f9f9f9;
+}
+
+#tabela tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estatísticas */
+#estatisticas {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+}
+
+/* Ajuste dos gráficos */
+.graficos {
+  display: flex;
+  justify-content: center; /* Centraliza os gráficos no container */
+  align-items: center;
+  gap: 2rem; /* Reduz o espaçamento entre os gráficos */
+  margin: 20px auto; /* Adiciona espaçamento em torno */
+  flex-wrap: wrap; /* Permite que os gráficos se ajustem em telas menores */
+  width: 100%; /* Garante que os gráficos não ultrapassem os limites do container */
+}
+
+.graficos canvas {
+  max-width: 300px; /* Limita a largura dos gráficos */
+  max-height: 300px; /* Limita a altura dos gráficos */
+  border-radius: 8px; /* Adiciona cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona leve sombra */
+  background-color: var(--bg); /* Fundo para destacar no layout */
+  padding: 10px;
+}
+
+
+/* Ganhos totais */
+.ganhos-totais {
+  background-color: var(--bg);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Ações rápidas */
+#acoes-rapidas {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 13px;
+}
+
+#acoes-rapidas button {
+  padding: 0.5rem 1rem;
+  background-color: var(--main-color);
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s linear;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+#acoes-rapidas button:hover {
+  transform: scale(1.1); /* Dá o "zoom" aumentando o tamanho */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+#exportacao{
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 13px;
+}
+
+#exportacao button{
+  background-color: var(--main-color);
+  width: 20%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  
+}
+
+#exportacao button:hover{
+  transform: scale(1.1); /* Dá o "zoom" aumentando o tamanho */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+/* Rodapé */
+footer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ccc;
+}

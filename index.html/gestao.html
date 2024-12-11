@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gestao.css">
+  <title>Histórico de Compras</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Histórico de Compras e Dados dos Usuários</h1>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Filtro de Busca -->
+    <section id="filtro">
+      <h2>Buscar Usuário</h2>
+      <label for="busca">Digite nome, e-mail ou CPF:</label>
+      <input type="text" id="busca" placeholder="Buscar usuário">
+      <button onclick="buscarUsuario()">Buscar</button>
+    </section>
+
+    <!-- Tabela de Histórico -->
+    <section id="tabela">
+      <h2>Histórico de Compras</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Produtos</th>
+            <th>Valor Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="lista-usuarios">
+          <!-- Dados gerados dinamicamente -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Estatísticas -->
+    <section id="estatisticas">
+      <h2>Resumo Estatístico</h2>
+      <div class="graficos">
+        <canvas id="grafico-gasto-usuarios"></canvas>
+        <canvas id="grafico-produtos-mais-comprados"></canvas>
+      </div>
+    </section>
+
+    <!-- Ganhos Totais -->
+    <div class="ganhos-totais">
+      <h3>Ganhos Totais</h3>
+      <p id="ganhos-totais"> Total de Ganhos: R$ 0,00</p>
+    </div>
+
+    <!-- Ações Rápidas -->
+    <section id="acoes-rapidas">
+      <h2>Ações Rápidas</h2>
+      <button onclick="editarUsuario()">Editar</button>
+      <button onclick="excluirCompra()">Excluir</button>
+      <button onclick="reenviarNota()">Reenviar Nota</button>
+    </section>
+
+    <!-- Exportação de Dados -->
+    <section id="exportacao">
+      <h2>Exportar Dados</h2>
+      <button onclick="exportarExcel()">Exportar para Excel</button>
+      <button onclick="exportarPDF()">Exportar para PDF</button>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Café em Casa. Todos os direitos reservados.</p>
+    </footer>
+  </main>
+
+  <script src="gestao.js"></script>
+
+</body>
+</html>

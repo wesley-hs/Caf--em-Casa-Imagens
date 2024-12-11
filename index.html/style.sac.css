@@ -1,0 +1,474 @@
+:root{
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px
+}
+
+.black-background {
+    background-color: #000; /* Fundo preto */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px; /* mudar depois */
+}
+
+body{
+    background-color: var(--bg);
+    padding-top: 100px; /* Ajuste conforme necessário */
+}
+
+main{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:2px;
+}
+
+.header{
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    width: 100%; /* Para garantir que a navbar ocupe toda a largura */
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 16px;
+}
+
+.search {
+    display: inline-block;
+}
+
+.search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+#user-name {
+    color: white;
+}
+.carrinho {
+    background-color: var(--black);
+    border-radius: 8px;
+    padding: 2rem;
+    position: fixed; /* Fixa o carrinho na tela */
+    right: 20px; /* Ajuste conforme necessário */
+    top: 70px; /* Ajuste conforme necessário */
+    z-index: 1000; /* Para que fique acima de outros elementos */
+    color: white;
+    display: none; /* Começa escondido */
+    width: 300px; /* Ajuste conforme necessário */
+}
+
+.carrinho h1 {
+    color: var(--main-color);
+    font-size: 2.5rem; /* Ajustado para uma melhor visualização */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.carrinho .itens {
+    margin-bottom: 2rem;
+}
+
+.carrinho .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: var(--border);
+}
+
+.carrinho .total {
+    font-size: 1.8rem; /* Ajustado para melhor legibilidade */
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.navbar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff; /* Cor dos links da navbar */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.dropdown {
+    float: flex;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #302e2e;
+    min-width: 120px;
+    box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+}
+
+#user-name { 
+    color: white;
+    font-size: 16px;
+}
+
+.logo {
+    width: 130px;
+}
+
+.btn {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+    border-radius: 8mm;
+}
+
+.btn:hover {
+    letter-spacing: 0.1rem;
+}
+
+#home {
+    padding: 20px;
+}
+
+.home-container {
+    background: url("./assets/home-img.jpg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px; /* Deve ser igual ao padding-top do body */
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 60rem;
+    padding-bottom: 50vh;
+}
+
+.content h3 {
+    color: #fff;
+    font-size: 6rem;
+}
+
+.content p {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 1rem 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.title span {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.about .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.menu .box-container .box img {
+    height: 10rem;
+}
+
+.menu .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.menu .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.menu .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.menu .box-container .box:hover {
+    background-color: #fff;
+}
+
+.menu .box-container .box:hover>* {
+    color: var(--black);
+}
+
+.promo .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.promo .box-container .box {
+    text-align: center;
+    border: var(--border);
+    padding: 5rem;
+    cursor: pointer;
+}
+
+.promo .box-container .box img {
+    height: 10rem;
+}
+
+.promo .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.promo .box-container .box .price {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.promo .box-container .box .price span {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+.promo .box-container .box:hover {
+    background-color: #fff;
+}
+
+.promo .box-container .box:hover>* {
+    color: var(--black);
+}
+
+footer {
+    background-color: #333; /* Cor de fundo do footer */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px 0; /* Espaçamento interno */
+    position: relative; /* Para garantir que o footer fique no lugar certo */
+    bottom: 0; /* Para que fique sempre na parte inferior da página */
+    width: 100%; /* Para ocupar toda a largura da tela */
+}
+
+/* Container SAC */
+.sac-container {
+    padding: 6rem 2rem 2rem 2rem;
+    text-align: center;
+    background-color: var(--bg);
+    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sac-container h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sac-container p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* Formulário SAC */
+.form-sac {
+    background-color: var(--black);
+    padding: 3rem;
+    border-radius: 8mm;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 8mm;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 8mm;
+    border: 1px solid var(--border);
+    background-color: #202020;
+    color: #fff;
+}
+
+.form-group textarea {
+    height: 200px;
+}
+
+.form-group button {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 8mm;
+    cursor: pointer;
+    width: 100%;
+}
+
+.form-group button:hover {
+    letter-spacing: 0.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-sac {
+        padding: 2rem;
+    }
+
+    .form-group button {
+        width: 100%;
+    }
+}
+/* Mensagem de sucesso */
+.success-message {
+    display: none;
+    background-color: #28a745; /* Cor verde para sucesso */
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Outras regras de estilo já estão no seu código atual... */

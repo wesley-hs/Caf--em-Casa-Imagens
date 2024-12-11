@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café em casa - Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/bootstrap-extended.css" />
+    <script src="script/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+  </head>
+
+  <body class="vertical-layout 1-column navbar-sticky bg-full-screen-image footer-static blank-page light-layout " data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
+
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-header row"></div>
+        <div class="content-body">
+          <section id="auth-login" class="row flexbox-container">
+            <div class="col-xl-8 col-11">
+              <a id="logo"><img src="./assets/logo.jpg" alt="logo" id="logo" class="logo"></a>
+              <div class="card bg-authentication mb-0">
+                <div class="row m-0">
+                  <div class="col-md-6 col-12 px-0">
+                    <div class="card disable-rounded-right mb-0 p-2 h-100 d-flex justify-content-center">
+                      <div class="card-header pb-1">
+                        <h3 class="text-center mb-1">Login</h3>
+                      </div>
+                      <div class="card-content">
+                        <div class="card-body">
+                          <form method="POST" name="formLogin" id="formLogin" action="logado.html">
+                            <div class="form-group mb-50">
+                              <input id="email_login" type="email" class="form-control" required name="email" autocomplete="email" autofocus placeholder="E-mail">
+                              <select id="userType" class="form-control" required>
+                                <option value="disabled select">Selecione o tipo de usuário</option>
+                                <option value="cliente">Cliente</option>
+                                <option value="admin">Administrador</option>
+                              </select>
+                            </div>
+                            <div class="form-group campo-container">
+                              <input id="password" type="password" class="form-control" required name="password" autocomplete="current-password" placeholder="Senha">
+                              <i class="bi bi-eye submit-eye" id="togglePassword"></i>
+                            </div>
+                            <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center"></div>
+                            <button type="submit" id="loginButton" class="btn btn-primary glow w-100 position-relative">Acessar
+                              <i id="icon-arrow" class="bx bx-right-arrow-alt"></i>
+                            </button>
+                            <p id="error-message" style="color: red; display: none;">Email ou senha incorretos. Por favor, tente novamente.</p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 d-md-block d-none text-center align-self-center p-3">
+                    <div class="card-content">
+                      <img class="img-fluid" src="assets/login.png" style="border-radius: 10px;" alt="branding logo">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script/jquery.mask.js"></script>
+    <script src="script/script.js"></script>
+
+    <script>
+      // Redireciona para a página inicial
+      document.getElementById('logo').addEventListener('click', () => window.location.href = 'carrinho.html'); 
+      
+      function validarLogin(e) {
+        e.preventDefault(); // Impede o envio do formulário
+
+        // Captura os valores inseridos no formulário de login
+        const emailDigitado = document.getElementById('email_login').value;
+        const senhaDigitada = document.getElementById('password').value;
+        const tipoUsuario = document.getElementById('userType').value;
+
+        // Dados do administrador
+        const adminEmail = 'cafeadm@gmail.com';
+        const adminSenha = 'cafe2024';
+
+        // Exibe a mensagem de erro e esconde ela inicialmente
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'none';
+
+        // Verificação do tipo de usuário
+        if (tipoUsuario === 'admin') {
+          if (emailDigitado === adminEmail && senhaDigitada === adminSenha) {
+            alert('Bem-vindo, Administrador!');
+            window.location.href = 'gestao.html';
+          } else {
+            errorMessage.textContent = 'Email ou senha de administrador incorretos.';
+            errorMessage.style.display = 'block';
+          }
+        } else if (tipoUsuario === 'cliente') {
+          // Lógica para clientes
+          if (emailDigitado === '' || senhaDigitada === '') {
+            errorMessage.textContent = 'Por favor, preencha todos os campos.';
+            errorMessage.style.display = 'block';
+          } else {
+            alert('Login realizado com sucesso!');
+            window.location.href = 'carrinho.html';
+          }
+        } else {
+          errorMessage.textContent = 'Por favor, selecione um tipo de usuário válido.';
+          errorMessage.style.display = 'block';
+        }
+      }
+
+      // Adiciona o evento de validação ao formulário
+      document.getElementById('formLogin').addEventListener('submit', validarLogin);
+    </script>
+  </body>
+</html>

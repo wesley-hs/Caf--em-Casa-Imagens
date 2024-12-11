@@ -1,0 +1,448 @@
+:root{
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px
+}
+
+.black-background {
+    background-color: #000; /* Fundo preto */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px; /* mudar depois */
+}
+
+body{
+    background-color: var(--bg);
+    padding-top: 100px; /* Ajuste conforme necessário */
+}
+
+main{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding:2px;
+}
+
+.header{
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+    border-bottom: var(--border);
+    background-color: var(--bg);
+    width: 100%; /* Para garantir que a navbar ocupe toda a largura */
+}
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 16px;
+}
+
+hr{
+        border: 0;
+        height: 2px;
+        background-color: #d3ad7f; /* Cor da linha */
+        margin: 2rem 0; /* Espaçamento acima e abaixo da linha */
+        padding-top: 1px;
+        position: static;
+     }
+
+#cep-destino{
+        margin-top: 10px;
+        width: 100%;
+        max-width: 400px;
+        padding: 1rem;
+        border-radius: 8px;
+        border: none;
+        background-color: white;
+        font-size: 16px;
+        color: rgb(8, 8, 8);
+        font-family: "Poppins",sans-serif;
+       }
+
+       #calcular-frete{
+        font-size: 16px;
+        margin-top: 1rem;
+        width: 15%;
+        padding: 1rem 2rem;
+        text-align: center;
+       }
+
+       .container{
+        background-color: var(--secondary-color);
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
+        color: white;
+        
+       }
+
+       h2{
+        font-size: 30px;
+        margin-bottom: 1rem; 
+        color: var(--main-color);
+        margin-top: 50px;
+        font-family: "Poppins", sans-serif;
+       }
+
+       p{
+        color: var(--main-color);
+       }
+
+       h3{
+        font-size: 16px;
+        margin-bottom: 1rem;
+        color: var(--main-color);
+        font-family: "Poppins", sans-serif;
+       }
+
+    .frete-pagamento .opcao {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: flex-start;
+        
+    }
+    
+    .frete-pagamento label {
+        font-size: 2rem;
+        color: var(--text-color);
+        display: inline-block;
+        margin-right: 0.5rem; 
+        color: white;
+        
+    }
+    
+    input[type="radio"] {
+        margin-left: 0; 
+        cursor: pointer; 
+        width: 15px; 
+        height: 15px;
+    }
+    
+    
+    
+    .resumo-pedido{
+        border-top: 0.2rem solid var(--input-border-color);
+        margin-top: 2rem; 
+        padding-top: 1.5rem;
+        font-size: 20px;
+        
+       }
+
+       .resumo-pedido p{
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+        font-family: "Poppins", sans-serif;
+       }
+
+
+       .cupom input{
+        width: 30%;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.8rem;
+        border: 0.1rem solid var(--input-border-color);
+        font-size: 1.6rem;
+        font-family: "Poppins";
+        color: white;
+       }
+       
+       
+       .endereco{
+        margin-top: 2rem;
+       }
+
+    
+
+/* Modal - Oculto por padrão */
+.modal-endereco {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #928f8f;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: left;
+    border-radius: 8px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+
+.close {
+    color: #272626;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+input {
+    width: 60%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8mm;
+}
+
+button {
+    background: var(--main-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-block;
+   
+}
+
+button:hover {
+    letter-spacing: 0.1rem;
+}
+
+
+    .metodo-pagamento{
+        margin-top: 2rem;
+      }
+
+    .opcao-pagamento{
+        margin-bottom: 2rem;
+      }
+
+      .opcao-pagamento h3{
+        margin-bottom: 2.6rem;
+        font-size: 2rem;
+      }
+
+      .opcao-pagamento input, .opcao-pagamento select{
+        width: 60%;
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.8rem;
+        border: 0.1rem solid var(--input-border-color);
+        background-color: white;
+        font-size: 1.6rem;
+        
+     }
+
+     #qrcode-pix{
+        width: 10%; /* Ajuste o tamanho conforme desejado */
+        height: 10%;
+        margin-top: 15px;
+    }
+
+    #codigo-barras {
+         width: 20%; /* Ajuste o tamanho conforme desejado */
+        height: 10%;
+        margin-top: 15px;
+
+    }
+    
+
+     footer{
+        background-color: #333; /* Cor de fundo do footer */
+        color: white; /* Cor do texto */
+        text-align: center; /* Alinha o texto ao centro */
+        padding: 10px 0; /* Espaçamento interno */
+        position: relative; /* Para garantir que o footer fique no lugar certo */
+        bottom: 0; /* Para que fique sempre na parte inferior da página */
+        width: 100%; /* Para ocupar toda a largura da tela */
+    }
+
+     footer p{
+        color: white;
+        font-size: 10px;
+     }
+     
+
+     .carrinho .item img {
+        width: 80px; /* Ajuste o tamanho da imagem conforme necessário */
+        height: auto;
+        margin-right: 1.5rem;
+    }
+    
+    .descricao {
+        flex: 1;
+    }
+    
+    .descricao h2 {
+        color: #fff;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    
+    .descricao p {
+        color: #fff;
+        font-size: 1.6rem;
+        margin: 0.5rem 0;
+    }
+    
+    input[type="number"] {
+        width: 50px;
+        margin-right: 10px;
+        padding: 0.5rem;
+        font-size: 1.6rem;
+    }
+    
+    button {
+        padding: 0.5rem 1rem;
+        background-color: var(--main-color);
+        color: #fff;
+        border-radius: 8mm;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #b29a6e; /* Cor de fundo ao passar o mouse */
+    }
+    
+    .total {
+        text-align: right;
+        font-size: 2rem;
+        color: #fff;
+        margin-top: 1rem;
+    }
+    
+    .finalizar {
+        background-color: var(--main-color);
+        padding: 1rem 2rem;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem; /* Para espaçamento */
+    }
+    
+    .finalizar:hover {
+        background-color: #b29a6e; /* Cor ao passar o mouse */
+    }
+
+
+
+    
+.navbar {
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff; /* Cor dos links da navbar */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.dropdown {
+    float: flex;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #302e2e;
+    min-width: 120px;
+    box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    text-align: left;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.icons img {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+}
+
+.logo {
+    width: 130px;
+}
+
+.hidden{ 
+    display: none;
+}
+
+#mudar-senha{
+    color: var(--main-color);
+}
+
+#user-name{
+    color: white;
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <title>Café em casa</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a id="logo"><img src="logo cafe-casa.png" alt="logo" class="logo"></a>
+            <nav class="navbar">
+                
+                <a id="link-sobre" href="#">Sobre</a>
+                <div class="dropdown">
+                    <a href="#menu" class="dropbtn">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="#cafe-trad">Café Tradicional</a>
+                        <a href="#cafe-gourmet">Café Gourmet</a>
+                        <a href="#capuccino">Capuccino</a>
+                    
+                    </div>
+                </div>
+                <a id="link-sac" href="#">SAC</a>
+                <a id="link-cadastro" href="#">Cadastre-se</a>
+                <a id="link-login" href="#">Login</a>
+            </nav>
+            <div class="search">
+                <input type="text" id="search" placeholder="Pesquisar">
+            </div>
+            <div class="icons">
+                <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png" alt="shopping-cart--v1" />
+            </div>
+
+             <!-- Exibindo o nome do cliente -->
+         <div id="user-name" class="user-name"></div>
+         
+        </section>
+    </header>
+    
+    <!-- Seção principal do produto -->
+    <main>
+        <section class="about">
+            <h2 class="title">Café <span>Extra Forte</span></h2>
+            <div class="row">
+                <div class="container-img">
+                    <img src="./assets/modelo1.jpg" alt="Café Tradicional" class="product-image">
+                </div>
+                <div class="content">
+                    <h3>Café Extra Forte</h3>
+                <p>Café extra forte, com sabor intenso e encorpado, notas marcantes de cacau e um aroma que desperta os sentidos. Perfeito para quem busca energia e personalidade em cada xícara.
+
+
+
+
+
+
+                </p>
+
+
+
+
+
+                    </p>
+                    <span class="price">R$ 17,99</span>
+                    <div>
+                        <a href="#" class="btn add-to-cart" data-nome="Café Extra Forte" data-preco="17,99">Adicionar ao Carrinho</a>
+                        <a href="#" class="btn">Finalizar Compra</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção de dica de harmonização -->
+        <section class="drink-tip">
+            <p><strong>Dica de Harmonização:</strong> Queijos curados. <em>O sabor salgado e intenso dos queijos contrasta e complementa a força do café extra forte, criando uma experiência única para o paladar.</em></p>        </section>
+    </main>
+
+    <!-- Carrinho -->
+    <div class="overlay" style="display: none;"></div>
+    <div class="carrinho" style="display: none;">
+        <h2>Seu Carrinho</h2>
+        <div class="itens"></div>
+        <div class="total">Total: R$ 0,00</div>
+        <button class="btn finalizar">Finalizar Compra</button>
+    </div>
+    <section id="cafe-gourmet" class="menu" style="display: none;">
+        <h2 class="title">Cafés Gourmet</h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="./assets/menu-3.png" alt="item-3">
+                <h3>Café Gourmet</h3>
+                <div class="price">R$ 25,99 <span>R$ 29,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Gourmet" data-preco="25.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-5.png" alt="item-5">
+                <h3>Café Premium</h3>
+                <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-5.png" alt="item-5">
+                <h3>Café Premium</h3>
+                <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-5.png" alt="item-5">
+                <h3>Café Premium</h3>
+                <div class="price">R$ 29,99 <span>R$ 34,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Premium" data-preco="29.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-6.png" alt="item-6">
+                <h3>Café Aromatizados</h3>
+                <div class="price">R$ 34,99 <span>R$ 39,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Aromatizados" data-preco="34.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-6.png" alt="item-6">
+                <h3>Café Aromatizados</h3>
+                <div class="price">R$ 34,99 <span>R$ 39,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café Aromatizados" data-preco="34.99">Adicionar ao carrinho</a>
+            </div>
+
+        </div>
+        <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+    </section>
+
+    <section id="cafe-trad" class="menu" style="display: none;">
+        <h2 class="title">Cafés Tradicionais</h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="./assets/menu-1.png" alt="item-1">
+                <h3>Café tradicional</h3>
+                <div class="price">R$ 15,99 <span>R$ 19,99</span></div>
+                <a href="caf1.html" class="btn add-to-cart" data-nome="Café tradicional" data-preco="15.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-2.png" alt="item-2">
+                <h3>Café extra forte</h3>
+                <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-2.png" alt="item-2">
+                <h3>Café extra forte</h3>
+                <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-2.png" alt="item-2">
+                <h3>Café extra forte</h3>
+                <div class="price">R$ 17,99 <span>R$ 23,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Café extra forte" data-preco="17.99">Adicionar ao carrinho</a>
+            </div>
+            
+            
+        </div>
+        <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+    </section>
+
+    <section id="capuccino" class="menu" style="display: none;">
+        <h2 class="title">Capuccino</h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="./assets/menu-4.png" alt="item-4">
+                <h3>Capuccino</h3>
+                <div class="price">R$ 23,99 <span>R$ 27,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Capuccino" data-preco="23.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-4.png" alt="item-4">
+                <h3>Capuccino</h3>
+                <div class="price">R$ 23,99 <span>R$ 27,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Capuccino" data-preco="23.99">Adicionar ao carrinho</a>
+            </div>
+            <div class="box">
+                <img src="./assets/menu-4.png" alt="item-4">
+                <h3>Capuccino</h3>
+                <div class="price">R$ 23,99 <span>R$ 27,99</span></div>
+                <a href="#" class="btn add-to-cart" data-nome="Capuccino" data-preco="23.99">Adicionar ao carrinho</a>
+            </div>
+            
+        </div>
+        <a href="#home" class="btn back-to-home">Voltar para a Home</a>
+    </section>
+</div>
+<section class="drink-tip">
+    <div class="tip-container">
+        <p>
+            <p><strong>Dica de Harmonização:</strong> Queijos curados. <em>O sabor salgado e intenso dos queijos contrasta e complementa a força do café extra forte, criando uma experiência única para o paladar.</em></p>        </section>
+
+
+
+
+        </p>
+    </div>
+</section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Café em Casa. Todos os direitos reservados.</p>
+    </footer>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Carregar carrinho do localStorage, se existir
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    let total = 0;
+
+    // Exibir e esconder carrinho
+    document.querySelector('.icons img[alt="shopping-cart--v1"]').addEventListener('click', () => {
+        const carrinhoDiv = document.querySelector('.carrinho');
+        carrinhoDiv.style.display = carrinhoDiv.style.display === 'none' ? 'block' : 'none';
+        atualizarCarrinho();
+
+        document.querySelector('.icons img[alt="shopping-cart--v1"]').addEventListener('click', toggleCarrinho);
+
+// Fechar carrinho ao clicar fora
+overlay.addEventListener('click', toggleCarrinho);
+    });
+
+    // Função para adicionar ao carrinho
+    function adicionarAoCarrinho(nome, preco) {
+        const itemExistente = carrinho.find(item => item.nome === nome);
+        if (itemExistente) {
+            itemExistente.quantidade++;
+        } else {
+            carrinho.push({ nome, preco: parseFloat(preco), quantidade: 1 });
+        }
+        total += parseFloat(preco);
+        salvarCarrinho(); // Salva no localStorage sempre que o carrinho for alterado
+        atualizarCarrinho();
+    }
+
+    // Salva o carrinho no localStorage
+    function salvarCarrinho() {
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    }
+
+    // Atualiza a exibição do carrinho
+    function atualizarCarrinho() {
+        const itensDiv = document.querySelector('.carrinho .itens');
+        itensDiv.innerHTML = ''; // Limpa itens existentes
+
+        carrinho.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `
+                ${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.quantidade} 
+                <button class="remover" data-index="${index}">Remover</button>
+                <input type="number" value="${item.quantidade}" min="1" class="quantidade" data-index="${index}">
+            `;
+            itensDiv.appendChild(div);
+        });
+
+        document.querySelector('.carrinho .total').innerText = `Total: R$ ${total.toFixed(2)}`;
+        adicionarRemoverListeners();
+        adicionarQuantidadeListeners();
+    }
+
+    // Adiciona evento aos botões de remover
+    function adicionarRemoverListeners() {
+        document.querySelectorAll('.remover').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.getAttribute('data-index');
+                total -= carrinho[index].preco * carrinho[index].quantidade; // Atualiza o total
+                carrinho.splice(index, 1); // Remove o item do carrinho
+                salvarCarrinho(); // Atualiza o localStorage após remoção
+                atualizarCarrinho();
+            });
+        });
+    }
+
+    // Adiciona evento aos inputs de quantidade
+    function adicionarQuantidadeListeners() {
+        document.querySelectorAll('.quantidade').forEach(input => {
+            input.addEventListener('change', (e) => {
+                const index = e.target.getAttribute('data-index');
+                const novaQuantidade = parseInt(e.target.value);
+                if (novaQuantidade > 0) {
+                    const item = carrinho[index];
+                    total -= item.preco * item.quantidade; // Remove o total atual do item
+                    item.quantidade = novaQuantidade; // Atualiza a quantidade
+                    total += item.preco * item.quantidade; // Adiciona o novo total do item
+                    salvarCarrinho(); // Atualiza o localStorage após alteração
+                    atualizarCarrinho();
+                } else {
+                    alert('A quantidade deve ser pelo menos 1.');
+                }
+            });
+        });
+    }
+
+    // Adiciona funcionalidade aos botões de "Adicionar ao carrinho"
+    document.querySelectorAll('.btn.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Previne o comportamento padrão do link
+            const nome = button.getAttribute('data-nome');
+            const preco = button.getAttribute('data-preco');
+            adicionarAoCarrinho(nome, preco);
+        });
+    });
+
+    // Funcionalidade para finalizar compra
+    document.querySelector('.finalizar').addEventListener('click', () => {
+    alert('Compra finalizada!');
+    
+    // Limpa o carrinho apenas na memória (interface)
+    carrinho = []; 
+    total = 0;
+
+    atualizarCarrinho(); // Atualiza a interface para exibir o carrinho vazio
+    document.querySelector('.carrinho').style.display = 'none'; // Oculta o carrinho
+
+    // Aguarda 3 segundos e redireciona para a página de pagamento
+    setTimeout(() => {
+        window.location.href = 'pagamento.html';
+    }, 3000); // 3000ms = 3 segundos
+});
+
+   
+
+    // Inicializa o carrinho com os dados do localStorage
+    if (carrinho.length > 0) {
+        carrinho.forEach(item => {
+            total += item.preco * item.quantidade;
+        });
+        atualizarCarrinho();
+       }
+
+    
+});
+
+    
+
+     // Função para mostrar as seções do menu
+        const menuLinks = document.querySelectorAll('.navbar a');
+        menuLinks.forEach(link => {            
+            link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Previne o comportamento padrão do link
+                    // Esconde todas as seções
+                    document.querySelectorAll('.home-container > section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    // Mostra a seção correspondente
+                    const targetId = link.getAttribute('href');
+                    document.querySelector(targetId).style.display = 'block';
+                    // Muda o fundo para preto
+                    document.body.classList.add('black-background');
+                });
+            });
+
+            // Função para voltar para a Home
+            const backToHomeButtons = document.querySelectorAll('.back-to-home');
+            backToHomeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault(); // Previne o comportamento padrão do link
+                    // Esconde todas as seções
+                    document.querySelectorAll('.home-container > section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    // Mostra a seção Home
+                    document.querySelector('#home').style.display = 'block';
+                    // Remove a classe de fundo preto ao voltar para a home
+                    document.body.classList.remove('black-background');
+                });
+            });
+
+            // Atualiza a página clicando na logo
+            document.getElementById('logo').addEventListener('click', () => window.location.href = 'carrinho.html');
+    
+           // Redirecionar o SAC para a página correta
+           document.getElementById('link-sac').addEventListener('click', () => window.location.href = 'sac.html');
+
+           // Redireciona para a página sobre
+           document.getElementById('link-sobre').addEventListener('click', () => window.location.href = "sobre.html");
+
+          // Redireciona para o Caastro
+          document.getElementById('link-cadastro').addEventListener('click', () => window.location.href = 'cadastro.html');
+
+          // redirecioan para o Login, caso já tenha uma conta
+          document.getElementById('link-login').addEventListener('click', () => window.location.href = 'login.html');
+
+
+           function displayUserName() {
+    // Recupera o nome do cliente do localStorage
+    const clienteNome = localStorage.getItem('clienteNome');
+
+    // Verifica se o nome do cliente existe no localStorage
+    if (clienteNome) {
+        // Se o nome do cliente foi encontrado, exibe-o na página
+        const userNameElement = document.getElementById('user-name');
+        userNameElement.textContent = `Olá, ${clienteNome}`;
+    }
+
+    // Depuração: Verificando se o nome foi recuperado corretamente
+    console.log('Nome exibido na header:', clienteNome);
+}
+
+// Chama a função quando a página carregar
+window.onload = displayUserName;
+
+// Acessa o campo de pesquisa pelo ID
+const searchInput = document.getElementById("search");
+
+// Adiciona um listener para o evento de "Enter"
+searchInput.addEventListener("keydown", function(event) {
+    // Verifica se a tecla pressionada é "Enter"
+    if (event.key === "Enter") {
+        const searchTerm = this.value.trim().toLowerCase(); // Captura o termo de pesquisa
+
+        // Redireciona baseado no termo de pesquisa
+        if (searchTerm === "cadastro") {
+            window.location.href = "cadastro.html";
+        } 
+        else if (searchTerm === "login") {
+            window.location.href = "login.html";
+        }
+        else if (searchTerm === "rastreio" || searchTerm === "status") {
+            window.location.href = "status.html";
+        }
+        else if (searchTerm === "carrinho") {
+            window.location.href = "carrinho.html";
+        }
+        else if (searchTerm === "sobre" || searchTerm === "comentário") {
+            window.location.href = "sobre.html";
+        }
+        else if (searchTerm === "perfil") {
+            window.location.href = "perfil.html";
+        }
+        else if (searchTerm === "pagamento") {
+            window.location.href = "pagamento.html";
+        }
+        else if (searchTerm === "sac" || "dúvidas") {
+           window.location.href = "sac.html";
+        }
+        else {
+            // Fallback para um valor não encontrado
+            alert("Termo de pesquisa não encontrado.");
+        }
+    }
+});
+
+    </script>
+    
+</body>
+
+</html>
